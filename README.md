@@ -4,16 +4,16 @@ Some svg utilities for `path` element like to calculate inverse path, or the fir
 
 ## Install 
 
-    npm install svg-utils
+    npm install svg-path-utils
     
 ## Usage
 
 ```js
-var SVGUtils = require('svg-utils');
+var utils = require('svg-path-utils');
 ```
 or in es6
 ```js
-import * as SVGUtils from 'svg-utils';
+import * as utils from 'svg-path-utils';
 ```
 
 ## API Reference

@@ -38,7 +38,20 @@ var SVGPathUtils = function(){
   }
 
   utils.parse = function(d){
-    return d;
+    var points = [];
+    var operators = [];
+
+    operators = d.replace(/\d+|,/g, '').split(' ');
+    points = d.replace(/[A-Za-z]+/g, '').split(' ');
+    points = points.map(function(d1){
+      var p = d1.split(',');
+      return { x: +p[0], y: +p[1] }
+    });
+
+    return {
+      operators: operators,
+      points: points
+    }
   }
 
   utils.generate = function(_){
