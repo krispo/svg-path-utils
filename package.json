@@ -1,0 +1,33 @@
+{
+  "name": "svg-path-utils",
+  "version": "0.0.1",
+  "description": "Some svg utils for path like to calculate inverse path, or the first/second derivative at a point on a path, ...",
+  "keywords": [
+    "svg",
+    "utils",
+    "path",
+    "inverse path"
+  ],
+  "homepage": "https://github.com/krispo/svg-path-utils",
+  "license": "MIT",
+  "main": "build/svg-path-utils.js",
+  "jsnext:main": "index",
+  "scripts": {
+    "uglify": "uglifyjs build/svg-path-utils.js -c -m -o build/svg-path-utils.min.js",
+    "build": "mkdir -p build && rollup -f umd -n svg_path_utils -o build/svg-path-utils.js -- index.js && npm run uglify",
+    "pretest": "npm run build",
+    "test": "faucet test/*-test.js",
+    "prepublish": "npm run build"
+  },
+  "author": "Konstantin Skipor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krispo/svg-path-utils.git"
+  },
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "rollup": "^0.25.4",
+    "tape": "^4.4.0",
+    "uglify-js": "^2.6.1"
+  }
+}
