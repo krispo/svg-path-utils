@@ -9,11 +9,13 @@ Some svg utilities for `path` element like to calculate inverse path, or the fir
 ## Usage
 
 ```js
-var utils = require('svg-path-utils');
+var spu = require('svg-path-utils');
+var utils = new spu.SVGPathUtils();
 ```
 or in es6
 ```js
-import * as utils from 'svg-path-utils';
+import {SVGPathUtils} from 'svg-path-utils';
+const utils = new SVGPathUtils();
 ```
 
 ## Example
