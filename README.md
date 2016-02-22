@@ -16,6 +16,19 @@ or in es6
 import * as utils from 'svg-path-utils';
 ```
 
+## Example
+Reverse path calculation
+
+| Direct Path   | Inverse Path  |
+|:-------------:|:-------------:|
+| <img src="http://i.imgur.com/yiqwvS7.png" width="250"> | <img src="http://i.imgur.com/V2xjCfK.png" width="250"> |
+| `d="M50,300 L50,250 C50,150 75,150 100,250 C150,450 200,450 200,250 Q200,100 400,100"`  | `d="M400,100 Q200,100 200,250 C200,450 150,450 100,250 C75,150 50,150 50,250 L50,300"`|
+
+```js
+var new_d = utils.inversePath(d);
+```
+Check also [online demo](http://plnkr.co/edit/rIhZfI?p=preview).
+
 ## API Reference
 
 We can generate and parse `d` string attribute, calculate inverse path, the first/second derivatives at a specific point on a path,..
