@@ -70,7 +70,20 @@
     }
 
     utils.inversePath = function(d){
-      return d;
+      var _ = utils.parse(d);
+      var ro = _.operators.reverse();
+      var rp = _.points.reverse();
+
+      //define first and last operators (M, Z)
+      var first, last;
+      first = ro.pop();
+      if ((last = ro[0]).toLowerCase() === 'z') {
+        ro.push(last);
+        ro.shift();
+      }
+      ro.unshift(first);
+
+      return utils.generate({ operators: ro, points: rp });
     }
 
     return utils;

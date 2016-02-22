@@ -32,5 +32,12 @@ test('svg-path-utils tests', function(t){
     t.end();
   });
 
+  t.test('.inversePath ', function(t){
+    var d = 'M10,200 C10,0 400,400 400,200 L20,30';
+    var inverse_d = utils.inversePath(d);
+    t.equal(inverse_d, 'M20,30 L400,200 C400,400 10,0 10,200 ');
+    t.end();
+  });
+
   t.end();
 });
