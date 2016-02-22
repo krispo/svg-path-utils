@@ -41,7 +41,7 @@ var SVGPathUtils = function(){
     var points = [];
     var operators = [];
 
-    operators = d.replace(/\d+|,/g, '').split(' ');
+    operators = d.replace(/\d+|,|\s/g, '').split('');
     points = d.replace(/[A-Za-z]+/g, '').split(' ');
     points = points.map(function(d1){
       var p = d1.split(',');
