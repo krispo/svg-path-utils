@@ -22,5 +22,15 @@ test('svg-path-utils tests', function(t){
     t.end();
   });
 
+  t.test('.generate ', function(t){
+    var _ = {
+      operators: ['M', 'C', 'L'],
+      points: [{x: 10, y:200}, {x: 10, y: 0}, {x: 400, y:400}, {x: 400, y: 200}, {x: 20, y:30}]
+    }
+    var d = utils.generate(_);
+    t.equal(d, 'M10,200 C10,0 400,400 400,200 L20,30 ');
+    t.end();
+  });
+
   t.end();
 });

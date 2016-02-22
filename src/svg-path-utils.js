@@ -38,24 +38,31 @@ var SVGPathUtils = function(){
   }
 
   utils.parse = function(d){
-    var points = [];
-    var operators = [];
-
-    operators = d.replace(/\d+|,|\s/g, '').split('');
-    points = d.replace(/[A-Za-z]+/g, '').split(' ');
+    var operators = d.replace(/\d+|,|\s/g, '').split('');
+    var points = d.replace(/[A-Za-z]+/g, '').split(' ');
     points = points.map(function(d1){
       var p = d1.split(',');
       return { x: +p[0], y: +p[1] }
     });
 
-    return {
-      operators: operators,
-      points: points
-    }
+    return { operators: operators, points: points }
   }
 
   utils.generate = function(_){
-    return ''
+    var p = _.points.slice();
+    var str = [];
+    var f;
+    _.operators.forEach(function(key){
+      if (typeof (f = utils[key]) === 'function') {
+        var args = [];
+        for (var i = -1, l = f.length/2; ++i < l;) {
+          var point = p.shift();
+          args.push(point.x, point.y);
+        }
+        str.push(f.apply(null, args));
+      }
+    });
+    return str.join('');
   }
 
   utils.inversePath = function(d){
