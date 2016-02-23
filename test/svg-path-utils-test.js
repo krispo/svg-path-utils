@@ -14,6 +14,78 @@ test('svg-path-utils tests', function(t){
     t.end();
   });
 
+  t.test('.L ', function(t){
+    t.equal(utils.L(10,20), 'L10,20');
+    t.end();
+  });
+  t.test('.l ', function(t){
+    t.equal(utils.l(10,20), 'l10,20');
+    t.end();
+  });
+
+  t.test('.H ', function(t){
+    t.equal(utils.H(10), 'H10');
+    t.end();
+  });
+  t.test('.h ', function(t){
+    t.equal(utils.h(10), 'h10');
+    t.end();
+  });
+
+  t.test('.V ', function(t){
+    t.equal(utils.V(10), 'V10');
+    t.end();
+  });
+  t.test('.v ', function(t){
+    t.equal(utils.v(10), 'v10');
+    t.end();
+  });
+
+  t.test('.C ', function(t){
+    t.equal(utils.C(10,0,400,400,400,200), 'C10,0 400,400 400,200');
+    t.end();
+  });
+  t.test('.c ', function(t){
+    t.equal(utils.c(10,0,400,400,400,200), 'c10,0 400,400 400,200');
+    t.end();
+  });
+
+  t.test('.S ', function(t){
+    t.equal(utils.S(10,0,400,400), 'S10,0 400,400');
+    t.end();
+  });
+  t.test('.s ', function(t){
+    t.equal(utils.s(10,0,400,400), 's10,0 400,400');
+    t.end();
+  });
+
+  t.test('.Q ', function(t){
+    t.equal(utils.Q(10,0,400,400), 'Q10,0 400,400');
+    t.end();
+  });
+  t.test('.q ', function(t){
+    t.equal(utils.q(10,0,400,400), 'q10,0 400,400');
+    t.end();
+  });
+
+  t.test('.T ', function(t){
+    t.equal(utils.T(10,20), 'T10,20');
+    t.end();
+  });
+  t.test('.t ', function(t){
+    t.equal(utils.t(10,20), 't10,20');
+    t.end();
+  });
+
+  t.test('.Z ', function(t){
+    t.equal(utils.Z(), 'Z');
+    t.end();
+  });
+  t.test('.z ', function(t){
+    t.equal(utils.z(), 'z');
+    t.end();
+  });
+
   t.test('.parse ', function(t){
     var d = 'M10,200 C10,0 400,400 400,200 L20,30';
     var _ = utils.parse(d);
