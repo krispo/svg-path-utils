@@ -65,6 +65,7 @@ Path utils:
 * .parse(*d*) - parse *d* string into sequence of operators ['M', 'L', ...] and sequence of principal points [*(x,y)*]
 * .generate({ operators: [*(operators)*], points: [*(points)*]}) - generate *d* string from a sequence of operators ['M', 'L', ...] and sequence of principal points [*(x,y)*]
 * .inversePath(*d*) - calculate and return *d* string of inverse path
+* .join(*args*) - join input args into a string with space (' ') separator.
 ...
 
 ## Licence

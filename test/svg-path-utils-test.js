@@ -111,5 +111,11 @@ test('svg-path-utils tests', function(t){
     t.end();
   });
 
+  t.test('.join ', function(t){
+    t.equal(utils.join('foo','bar','buz'), 'foo bar buz');
+    t.equal(utils.join(utils.M(10,20), utils.L(200, 100), utils.C(300,100,300,0,0,0), utils.Z()), 'M10,20 L200,100 C300,100 300,0 0,0 Z')
+    t.end();
+  });
+
   t.end();
 });

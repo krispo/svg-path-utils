@@ -82,5 +82,10 @@ var SVGPathUtils = function(){
     return utils.generate({ operators: ro, points: rp });
   }
 
+  utils.join = function(){
+    if (!arguments.length) return;
+    return Array.prototype.join.call(arguments, ' ');
+  }
+
   return utils;
 }
