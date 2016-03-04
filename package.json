@@ -14,7 +14,7 @@
   "jsnext:main": "index",
   "scripts": {
     "uglify": "uglifyjs build/svg-path-utils.js -c -m -o build/svg-path-utils.min.js",
-    "build": "mkdir -p build && rollup -f umd -n svg_path_utils -o build/svg-path-utils.js -- index.js && npm run uglify",
+    "build": "mkdir -p build && VERSION=`node -e 'console.log(require(\"./package.json\").version)'` && rollup -f umd --banner \"/* svg-path-utils, v${VERSION} */\" -n svg_path_utils -o build/svg-path-utils.js -- index.js && npm run uglify",
     "pretest": "npm run build",
     "test": "faucet test/*-test.js",
     "prepublish": "npm run build"
