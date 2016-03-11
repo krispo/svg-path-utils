@@ -1,6 +1,6 @@
 {
   "name": "svg-path-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Some svg utils for path like to calculate inverse path, or the first/second derivative at a point on a path, ...",
   "keywords": [
     "svg",
@@ -19,7 +19,7 @@
     "test": "faucet test/*-test.js",
     "prepublish": "npm run build"
   },
-  "author": "Konstantin Skipor",
+  "author": "Tin Skipor",
   "repository": {
     "type": "git",
     "url": "https://github.com/krispo/svg-path-utils.git"
