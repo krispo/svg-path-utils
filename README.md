@@ -36,40 +36,50 @@ Check also [online demo](http://plnkr.co/edit/rIhZfI?p=preview).
 
 ## API Reference
 
-We can generate and parse `d` string attribute, calculate inverse path, the first/second derivatives at a specific point on a path,..
+We can generate and parse `d` string attribute (path data), calculate inverse path,..
 
 uppercase (M) - absolute coordinates, lowercase (m) - relative coordinates
 
-Path operators: 
+Path data commands (operators): 
 
-* .M(x,y) - moveto
+* .M(x,y) - [“moveto” commands](http://www.w3.org/TR/SVG/paths.html#PathDataMovetoCommands).
 * .m(x,y) 
-* .L(x,y) - lineto
+* .L(x,y) - [“lineto” commands](http://www.w3.org/TR/SVG/paths.html#PathDataLinetoCommands).
 * .l(x,y)
-* .H(x) - horizontal lineto
+* .H(x) - horizontal [“lineto” commands](http://www.w3.org/TR/SVG/paths.html#PathDataLinetoCommands).
 * .h(x)
-* .V(y) - vertical lineto
+* .V(y) - vertical [“lineto” commands](http://www.w3.org/TR/SVG/paths.html#PathDataLinetoCommands).
 * .v(y)
-* .C(x1,y1,x2,y2,x,y) - cubic bezier curveto
+* .C(x1,y1,x2,y2,x,y) - [cubic Bézier curve commands](http://www.w3.org/TR/SVG/paths.html#PathDataCubicBezierCommands).
 * .c(x1,y1,x2,y2,x,y)
-* .S(x2,y2,x,y) - smooth cubic bezier curveto
+* .S(x2,y2,x,y) - smooth [cubic Bézier curve commands](http://www.w3.org/TR/SVG/paths.html#PathDataCubicBezierCommands).
 * .s(x2,y2,x,y)
-* .Q(x1,y1,x,y) - quadratic bezier curveto
+* .Q(x1,y1,x,y) - [quadratic Bézier curve commands](http://www.w3.org/TR/SVG/paths.html#PathDataQuadraticBezierCommands).
 * .q(x1,y1,x,y)
-* .T(x,y) - smooth quadratic bezier
+* .T(x,y) - smooth [quadratic Bézier curve commands](http://www.w3.org/TR/SVG/paths.html#PathDataQuadraticBezierCommands).
 * .t(x,y)
-* .Z() - close path
+* .Z() - [“closepath” commands](http://www.w3.org/TR/SVG/paths.html#PathDataClosePathCommand).
 * .z()
 
-> Todo: add .A(...) and .a(...) - elliptical arc.
+> Todo: add .A(...) and .a(...) - [elliptical arc curve commands](http://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands).
 
-Path utils: 
+Path data utils: 
 
-* .parse(*d*) - parse *d* string into sequence of operators ['M', 'L', ...] and sequence of principal points [*(x,y)*]
-* .generate({ operators: [*(operators)*], points: [*(points)*]}) - generate *d* string from a sequence of operators ['M', 'L', ...] and sequence of principal points [*(x,y)*]
-* .inversePath(*d*) - calculate and return *d* string of inverse path
-* .join(*args*) - join input args into a string with space (' ') separator.
-...
+<a name="utils_parse" href="#utils_parse">#</a> <i>utils</i>.<b>parse</b>(<i>d</i>)
+
+Parse path data *d* into sequence of operators ['M', 'L', ...] and sequence of principal points [*(x,y)*]
+
+<a name="utils_generate" href="#utils_generate">#</a> <i>utils</i>.<b>generate</b>({ operators: <i>[operators]</i>, points: <i>[points]</i>})
+
+Generate *d* string from a sequence of operators ['M', 'L', ...] and sequence of principal points [*(x,y)*]
+
+<a name="utils_inversePath" href="#utils_inversePath">#</a> <i>utils</i>.<b>inversePath</b>(<i>d</i>)
+
+Calculate and return *d* string of inverse path
+
+<a name="utils_join" href="#utils_join">#</a> <i>utils</i>.<b>join</b>(<i>args</i>)
+
+Join input args into a string with space (' ') separator.
 
 ## Licence
 MIT
