@@ -90,7 +90,31 @@ test('svg-path-utils tests', function(t){
     var d = 'M10,200 C10,0 400,400 400,200 L20,30';
     var _ = utils.parse(d);
     t.deepEqual(_.operators, ['M', 'C', 'L']);
-    t.deepEqual(_.points, [{x: 10, y:200}, {x: 10, y: 0}, {x: 400, y:400}, {x: 400, y: 200}, {x: 20, y:30}]);
+    t.deepEqual(_.points, [{x: 10, y:200}, {x: 10, y: 0}, {x: 400, y:400}, {x: 400, y: 200}, {x: 20, y: 30}]);
+    t.end();
+  });
+
+  t.test('.parse with spaces', function(t){
+    var d = 'M 10 200 C 10 0 400 400 400 200 L 20 30';
+    var _ = utils.parse(d);
+    t.deepEqual(_.operators, ['M', 'C', 'L']);
+    t.deepEqual(_.points, [{x: 10, y:200}, {x: 10, y: 0}, {x: 400, y: 400}, {x: 400, y: 200}, {x: 20, y: 30}]);
+    t.end();
+  });
+
+  t.test('.parse complex string', function(t){
+    var d = ' M10,   200  C 10 0 400,   400   400  \n,200L20,30  ';
+    var _ = utils.parse(d);
+    t.deepEqual(_.operators, ['M', 'C', 'L']);
+    t.deepEqual(_.points, [{x: 10, y:200}, {x: 10, y: 0}, {x: 400, y: 400}, {x: 400, y: 200}, {x: 20, y: 30}]);
+    t.end();
+  });
+
+  t.test('.parse complex string with negatives', function(t){
+    var d = ' M-10,   -200  C -10 0 -400,   -400   -400  ,-200L-20,-30  ';
+    var _ = utils.parse(d);
+    t.deepEqual(_.operators, ['M', 'C', 'L']);
+    t.deepEqual(_.points, [{x: -10, y:-200}, {x: -10, y: 0}, {x: -400, y: -400}, {x: -400, y: -200}, {x: -20, y: -30}]);
     t.end();
   });
 

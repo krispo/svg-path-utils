@@ -2,7 +2,8 @@
 [![Build Status](https://travis-ci.org/krispo/svg-path-utils.svg?branch=master)](https://travis-ci.org/krispo/svg-path-utils)
 [![NPM Version](http://img.shields.io/npm/v/svg-path-utils.svg?style=flat)](https://www.npmjs.org/package/svg-path-utils)
 
-Some svg utilities for `path` element like to calculate inverse path, or the first/second derivative at a point on a path, ...
+Some utilities for svg [path](https://www.w3.org/TR/SVG/paths.html) element to help operating with [path data](https://www.w3.org/TR/SVG/paths.html#PathData), 
+like calculating inverse path data...
 
 ## Install 
 

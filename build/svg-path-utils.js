@@ -43,12 +43,15 @@
     }
 
     utils.parse = function(d){
-      var operators = d.replace(/\d+|,|\s/g, '').split('');
-      var points = d.replace(/[A-Za-z]+/g, '').split(' ');
-      points = points.map(function(d1){
-        var p = d1.split(',');
-        return { x: +p[0], y: +p[1] }
-      });
+      var operators = d.replace(/[\d,\-\s]+/g, '').split('');
+      var points = [];
+
+      var nums = d.replace(/[A-Za-z,]+/g, ' ').trim().replace(/\s\s+/g, ' ').split(' ');
+
+      var i = -1, l = nums.length;
+      while(i < l - 1){
+        points.push({ x: +nums[++i], y: +nums[++i] })
+      }
 
       return { operators: operators, points: points }
     }
