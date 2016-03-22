@@ -48,10 +48,18 @@
 
       var nums = d.replace(/[A-Za-z,]+/g, ' ').trim().replace(/\s\s+/g, ' ').split(' ');
 
-      var i = -1, l = nums.length;
-      while(i < l - 1){
-        points.push({ x: +nums[++i], y: +nums[++i] })
-      }
+      var f, i = -1;
+      operators.forEach(function(key){
+        if (typeof (f = utils[key]) === 'function') {
+          if (f.length === 1) {
+            points.push({ x: +nums[++i] })
+          } else {
+            for (var j = -1, l = f.length/2; ++j < l;) {
+              points.push({ x: +nums[++i], y: +nums[++i] })
+            }
+          }
+        }
+      });
 
       return { operators: operators, points: points }
     }
@@ -63,9 +71,13 @@
       _.operators.forEach(function(key){
         if (typeof (f = utils[key]) === 'function') {
           var args = [];
-          for (var i = -1, l = f.length/2; ++i < l;) {
-            var point = p.shift();
-            args.push(point.x, point.y);
+          if (f.length === 1) {
+            args.push(p.shift().x);
+          } else {
+            for (var i = -1, l = f.length/2; ++i < l;) {
+              var point = p.shift();
+              args.push(point.x, point.y);
+            }
           }
           str.push(f.apply(null, args));
         }
