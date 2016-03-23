@@ -1,7 +1,7 @@
 {
   "name": "svg-path-utils",
   "version": "0.0.3",
-  "description": "Some svg utils for path like to calculate inverse path, or the first/second derivative at a point on a path, ...",
+  "description": "Some utils for SVG's path data like path data generation, inverse path data calculation, ...",
   "keywords": [
     "svg",
     "utils",
