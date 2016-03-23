@@ -48,27 +48,44 @@ It is also used in [Yarrow](http://krispo.github.io/yarrow/).
 Uppercase (M, L, H, ...) - uses absolute coordinates, lowercase (m, l, h, ...) - uses relative coordinates
 
 <a name="utils_M" href="#utils_M">#</a> <i>utils</i>.<b>M</b>(<i>x</i>, <i>y</i>) - [“moveto” commands](http://www.w3.org/TR/SVG/paths.html#PathDataMovetoCommands).
+
 <a name="utils_m" href="#utils_m">#</a> <i>utils</i>.<b>m</b>(<i>x</i>, <i>y</i>) 
+
 <a name="utils_L" href="#utils_L">#</a> <i>utils</i>.<b>L</b>(<i>x</i>, <i>y</i>) - [“lineto” commands](http://www.w3.org/TR/SVG/paths.html#PathDataLinetoCommands).
+
 <a name="utils_l" href="#utils_l">#</a> <i>utils</i>.<b>l</b>(<i>x</i>, <i>y</i>)
+
 <a name="utils_H" href="#utils_H">#</a> <i>utils</i>.<b>H</b>(<i>x</i>) - horizontal [“lineto” commands](http://www.w3.org/TR/SVG/paths.html#PathDataLinetoCommands).
+
 <a name="utils_h" href="#utils_h">#</a> <i>utils</i>.<b>h</b>(<i>x</i>)
+
 <a name="utils_V" href="#utils_V">#</a> <i>utils</i>.<b>V</b>(<i>y</i>) - vertical [“lineto” commands](http://www.w3.org/TR/SVG/paths.html#PathDataLinetoCommands).
+
 <a name="utils_v" href="#utils_v">#</a> <i>utils</i>.<b>v</b>(<i>y</i>)
+
 <a name="utils_C" href="#utils_C">#</a> <i>utils</i>.<b>C</b>(<i>x1</i>, <i>y1</i>, <i>x2</i>, <i>y2</i>, <i>x</i>, <i>y</i>) - [cubic Bézier curve commands](http://www.w3.org/TR/SVG/paths.html#PathDataCubicBezierCommands).
+
 <a name="utils_c" href="#utils_c">#</a> <i>utils</i>.<b>c</b>(<i>x1</i>, <i>y1</i>, <i>x2</i>, <i>y2</i>, <i>x</i>, <i>y</i>)
+
 <a name="utils_S" href="#utils_S">#</a> <i>utils</i>.<b>S</b>(<i>x2</i>, <i>y2</i>, <i>x</i>, <i>y</i>) - smooth [cubic Bézier curve commands](http://www.w3.org/TR/SVG/paths.html#PathDataCubicBezierCommands).
+
 <a name="utils_s" href="#utils_s">#</a> <i>utils</i>.<b>s</b>(<i>x2</i>, <i>y2</i>, <i>x</i>, <i>y</i>)
+
 <a name="utils_Q" href="#utils_Q">#</a> <i>utils</i>.<b>Q</b>(<i>x1</i>, <i>y1</i>, <i>x</i>, <i>y</i>) - [quadratic Bézier curve commands](http://www.w3.org/TR/SVG/paths.html#PathDataQuadraticBezierCommands).
+
 <a name="utils_q" href="#utils_q">#</a> <i>utils</i>.<b>q</b>(<i>x1</i>, <i>y1</i>, <i>x</i>, <i>y</i>)
+
 <a name="utils_T" href="#utils_T">#</a> <i>utils</i>.<b>T</b>(<i>x</i>, <i>y</i>) - smooth [quadratic Bézier curve commands](http://www.w3.org/TR/SVG/paths.html#PathDataQuadraticBezierCommands).
+
 <a name="utils_t" href="#utils_t">#</a> <i>utils</i>.<b>t</b>(<i>x</i>, <i>y</i>)
+
 <a name="utils_Z" href="#utils_Z">#</a> <i>utils</i>.<b>Z</b>(<i></i>) - [“closepath” commands](http://www.w3.org/TR/SVG/paths.html#PathDataClosePathCommand).
+
 <a name="utils_z" href="#utils_z">#</a> <i>utils</i>.<b>z</b>(<i></i>)
 
 > Todo: add .A(...) and .a(...) - [elliptical arc curve commands](http://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands).
 
-Example of using:
+Example of usage:
 
 ```js
 utils.M(50,100)            // return: "M50,100"
