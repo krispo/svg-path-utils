@@ -19,7 +19,7 @@
     "test": "faucet test/*-test.js",
     "prepublish": "npm run build"
   },
-  "author": "Tin Skipor",
+  "author": "Konstantin Skipor",
   "repository": {
     "type": "git",
     "url": "https://github.com/krispo/svg-path-utils.git"
