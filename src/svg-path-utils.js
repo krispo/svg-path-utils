@@ -1,5 +1,3 @@
-export default SVGPathUtils;
-
 var SVGPathUtils = function(){
   var utils = {};
 
@@ -104,3 +102,5 @@ var SVGPathUtils = function(){
 
   return utils;
 }
+
+export default SVGPathUtils;
